@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* <body className="flex items-center justify-center h-screen w-screen m-0 text-black bg-white"> */}
-      <body className="bg-stone-300 overflow-hidden">{children}</body>
+      <body className="bg-stone-300 bg-gradient-radial from-black from-10% via-transparent via-11% bg-[length:15px_15px] bg-repeat overflow-hidden">{children}</body>
     </html>
   );
 }
