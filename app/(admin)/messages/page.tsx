@@ -1,5 +1,6 @@
-import MessagesList from "@/components/Messages/MessagesList";
 import { prisma } from "@/lib/db";
+
+import MessagesList from "@/components/Messages/MessagesList";
 
 const getMessages = async () => {
   const messages = await prisma.message.findMany();

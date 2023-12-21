@@ -2,6 +2,7 @@
 
 import { prisma } from "@/lib/db";
 import { contactFormDataSchema, rsvpFormDataSchema } from "@/lib/schema";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 type ContactFormInputs = z.infer<typeof contactFormDataSchema>;
@@ -11,13 +12,16 @@ export const addMessage = async (data: ContactFormInputs) => {
   try {
     const result = contactFormDataSchema.safeParse(data);
     if (result.success) {
-      const response = await prisma.message.create({
+      await prisma.message.create({
         data: {
           firstName: result.data.firstName,
           lastName: result.data.lastName,
           message: result.data.message,
         },
       });
+
+      revalidatePath("/messages");
+
       return { success: true, data: result.data };
     }
     if (result.error) {
@@ -59,6 +63,9 @@ export const addBooking = async (data: RsvpFormInputs) => {
           });
         },
       );
+
+      revalidatePath("/bookings");
+
       return { success: true, data: result.data };
     }
     if (result.error) {
