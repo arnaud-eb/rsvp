@@ -59,7 +59,7 @@ const Hero = () => {
         // ease: "none",
         // paused: true,
         scrollTrigger: {
-          trigger: "#hero",
+          trigger: svgRef.current,
           // markers: true,
           start: "top top",
           end: "100% top",
