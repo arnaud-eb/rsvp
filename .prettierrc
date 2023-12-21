@@ -1,0 +1,14 @@
+{
+    "importOrder": [
+        "<THIRD_PARTY_MODULES>",
+        "hooks/",
+        "components/",
+        "utils/"
+    ],
+    "importOrderSeparation": true,
+    "plugins": [
+        "@trivago/prettier-plugin-sort-imports",
+        "prettier-plugin-tailwindcss"
+      ],
+    "pluginSearchDirs": false
+}
