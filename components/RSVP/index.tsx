@@ -25,8 +25,8 @@ type Inputs = z.infer<typeof rsvpFormDataSchema>;
 type FieldName = keyof Inputs;
 
 const RSVP: FC = () => {
-  const [previousStep, setPreviousStep] = useState<number>(6);
-  const [currentStep, setCurrentStep] = useState<number>(6);
+  const [previousStep, setPreviousStep] = useState<number>(0);
+  const [currentStep, setCurrentStep] = useState<number>(0);
   const delta = currentStep - previousStep;
 
   const {
