@@ -522,7 +522,18 @@ const RSVP: FC = () => {
               <Loader />
             </article>
           )}
-          {currentStep === 6 && <Confirmation guests={fields.length} />}
+          {currentStep === 6 && (
+            <Confirmation isRedirected={true}>
+              <h3 className="text-xl font-bold">C&apos;est confirmé!</h3>
+              <p className="text-lg">
+                On se réjouit de {fields.length > 1 ? "vous" : "te"} voir.
+              </p>
+              <p className="mt-5 text-base">
+                Clique sur le bouton retour en haut à gauche ou attends 5
+                secondes avant d&apos;être redirigé vers le menu principal.
+              </p>
+            </Confirmation>
+          )}
         </form>
         {currentStep !== lastStep && (
           <div className="pb-6 lg:pb-8">

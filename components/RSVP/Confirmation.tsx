@@ -1,12 +1,15 @@
 import { gsap } from "gsap";
 import { useRouter } from "next/navigation";
-import React, { FC, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
-type ConfirmationProps = { guests: number };
+type ConfirmationProps = { isRedirected?: boolean };
 
-const Confirmation: FC<ConfirmationProps> = ({ guests }) => {
+const Confirmation: FCC<ConfirmationProps> = ({
+  children,
+  isRedirected = false,
+}) => {
   const router = useRouter();
   const containerRef = useRef<HTMLElement | null>(null);
   const textRef = useRef(null);
@@ -36,11 +39,14 @@ const Confirmation: FC<ConfirmationProps> = ({ guests }) => {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      router.push("/");
-    }, 5000);
+    let timer: NodeJS.Timeout;
+    if (isRedirected) {
+      timer = setTimeout(() => {
+        router.push("/");
+      }, 5000);
+    }
     return () => clearTimeout(timer);
-  }, [router]);
+  }, [router, isRedirected]);
 
   return (
     <article
@@ -64,14 +70,7 @@ const Confirmation: FC<ConfirmationProps> = ({ guests }) => {
         />
       </svg>
       <div ref={textRef} className="text-center text-gray-900">
-        <h3 className="text-xl font-bold">C&apos;est confirmé!</h3>
-        <p className="text-lg">
-          On se réjouit de {guests > 1 ? "vous" : "te"} voir.
-        </p>
-        <p className="mt-5 text-base">
-          Clique sur le bouton retour en haut à gauche ou attends 5 secondes
-          avant d&apos;être redirigé vers le menu principal.
-        </p>
+        {children}
       </div>
     </article>
   );

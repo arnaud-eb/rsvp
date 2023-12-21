@@ -1,8 +1,9 @@
 "use client";
 
+import Confirmation from "./RSVP/Confirmation";
 import { contactFormDataSchema } from "@/lib/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 
@@ -31,6 +32,8 @@ const ContactForm: FC = () => {
     resolver: zodResolver(contactFormDataSchema),
   });
 
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     const result = await addMessage(data);
 
@@ -47,11 +50,19 @@ const ContactForm: FC = () => {
 
     console.log("Message sent!", result);
 
+    setIsFormSubmitted(true);
+
     reset();
     // show confirmation that msg was received
   };
 
-  return (
+  return isFormSubmitted ? (
+    <Confirmation>
+      <h3 className="text-xl font-bold text-red-900">
+        On a bien reçu le message. Merci!
+      </h3>
+    </Confirmation>
+  ) : (
     <form onSubmit={handleSubmit(onSubmit)} className="mx-auto w-3/4">
       <div className="mb-3 md:mb-5">
         <label htmlFor="firstName" className="hidden">
