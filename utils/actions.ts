@@ -20,7 +20,7 @@ export const addMessage = async (data: ContactFormInputs) => {
         },
       });
 
-      revalidatePath("/messages");
+      revalidatePath("/admin/messages");
 
       return { success: true, data: result.data };
     }
@@ -64,7 +64,7 @@ export const addBooking = async (data: RsvpFormInputs) => {
         },
       );
 
-      revalidatePath("/bookings");
+      revalidatePath("/admin/bookings");
 
       return { success: true, data: result.data };
     }
