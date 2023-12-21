@@ -32,8 +32,6 @@ const RSVP: FC = () => {
   const {
     register,
     handleSubmit,
-    // watch,
-    reset,
     trigger,
     formState: { errors },
     control,
@@ -70,7 +68,6 @@ const RSVP: FC = () => {
 
     console.log("Booking sent!", result);
 
-    reset();
     // show confirmation that booking was received
   };
 
@@ -525,7 +522,7 @@ const RSVP: FC = () => {
               <Loader />
             </article>
           )}
-          {currentStep === 6 && <Confirmation />}
+          {currentStep === 6 && <Confirmation guests={fields.length} />}
         </form>
         {currentStep !== lastStep && (
           <div className="pb-6 lg:pb-8">
