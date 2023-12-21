@@ -78,7 +78,7 @@ const sections: (GeneralType | DetailsType)[] = [
 
 const List: FC = () => {
   return (
-    <section className="px-4 pb-[6vh]">
+    <section className="overflow-hidden px-4 pb-[6vh]">
       {sections.map((section, index) =>
         section.type === "general" ? (
           <General key={section.id} section={section} index={index} />
