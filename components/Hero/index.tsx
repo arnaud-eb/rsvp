@@ -84,8 +84,8 @@ const Hero = () => {
           opacity: 0,
           scrollTrigger: {
             trigger: scrollDownArrowRef.current,
-            start: "top 82%",
-            end: "75% 82%",
+            start: "top 75%",
+            end: "75% 75%",
             scrub: true,
             toggleActions: "play none none reverse",
           },
@@ -111,7 +111,7 @@ const Hero = () => {
       <HeroSvg ref={svgRef} />
       <span
         ref={scrollDownArrowRef}
-        className="absolute left-1/2 top-[85vh] inline-flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-blue-700 p-2.5"
+        className="absolute left-[calc(50%-1.25rem)] top-[78vh] inline-flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-blue-700 p-2.5"
       >
         <Image
           src={chevronIcon}

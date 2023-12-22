@@ -9,7 +9,7 @@ const HeroSvg = forwardRef<Ref, Props>(function Hero(props, ref) {
       ref={ref}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 373.23 1140.07"
-      className="h-screen w-screen min-w-[350px] max-w-[1200px] origin-top scale-75 p-[5vw] sm:scale-[0.85]"
+      className="h-screen w-screen min-w-[350px] max-w-[1200px] origin-top scale-75 p-[5vw]"
     >
       <path
         fill="#111219"
