@@ -102,13 +102,13 @@ const CTA: FC = () => {
             className="flex w-5/6 justify-evenly text-4xl font-semibold sm:w-full sm:text-3xl md:text-4xl"
           >
             <Link
-              className="w-28 rounded-full bg-blue-700 px-5 py-2.5 text-center font-medium hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+              className="w-28 rounded-full bg-green-700 px-5 py-2.5 text-center font-medium hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
               href="/rsvp"
             >
               Oui
             </Link>
             <button
-              className="w-28 rounded-full bg-blue-700 px-5 py-2.5 text-center font-medium hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+              className="w-28 rounded-full bg-red-700 px-5 py-2.5 text-center font-medium hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300"
               onClick={handleClick}
             >
               Non
