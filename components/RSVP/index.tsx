@@ -4,8 +4,7 @@ import Step from "./Step";
 import Stepper from "./Stepper";
 import { steps } from "./constants";
 import { rsvpFormDataSchema } from "@/lib/schema";
-import chevronLeftIcon from "@/public/icons/chevronLeft.svg";
-import chevronRightIcon from "@/public/icons/chevronRight.svg";
+import chevronIcon from "@/public/icons/chevron.svg";
 import minusIcon from "@/public/icons/minus.svg";
 import plusIcon from "@/public/icons/plus.svg";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -552,7 +551,7 @@ const RSVP: FC = () => {
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-700 p-2.5 group-hover:bg-blue-800 group-focus:outline-none group-focus:ring-4 group-focus:ring-blue-300">
                   <Image
                     priority
-                    src={chevronLeftIcon}
+                    src={chevronIcon}
                     alt="previous"
                     className="h-4 w-4 lg:h-5 lg:w-5"
                   />
@@ -572,9 +571,9 @@ const RSVP: FC = () => {
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-700 p-2.5 group-hover:bg-blue-800 group-focus:outline-none group-focus:ring-4 group-focus:ring-blue-300">
                   <Image
                     priority
-                    src={chevronRightIcon}
+                    src={chevronIcon}
                     alt="next"
-                    className="h-4 w-4 lg:h-5 lg:w-5"
+                    className="h-4 w-4 rotate-180 lg:h-5 lg:w-5"
                   />
                   <span className="sr-only">Next</span>
                 </span>

@@ -1,8 +1,10 @@
 "use client";
 
 import HeroSvg from "./HeroSvg";
+import chevronIcon from "@/public/icons/chevron.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import { useRef } from "react";
 
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
@@ -12,6 +14,17 @@ import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 const Hero = () => {
   const container = useRef<HTMLElement>(null);
   const svgRef = useRef<SVGSVGElement | null>(null);
+  const scrollDownArrowRef = useRef(null);
+  const scrollTopArrowRef = useRef(null);
+
+  const handleClick = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 100,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -47,31 +60,46 @@ const Hero = () => {
 
       // gsap.to("#hero", { opacity: 1 }); //opacity does not work anymore with pin: true
 
-      gsap.to(svgRef.current!.children, {
-        x: "random(-1000, 1000)",
-        y: "random(-1000, 1000)",
-        opacity: 0,
-        scale: 0,
-        rotation: "random(-720, 720)",
-        duration: 1,
-        stagger: stagger_val,
-        ease: "power4.in",
-        // ease: "none",
-        // paused: true,
-        scrollTrigger: {
-          trigger: svgRef.current,
-          // markers: true,
-          start: "top top",
-          end: "100% top",
-          // toggleActions: "restart reset none none",
-          // scrub: true,
-          scrub: 2,
-          pin: true,
-          pinSpacing: true, //default is true
-        },
-        // paused: true,
-        // delay: 2,
-      });
+      gsap
+        .timeline()
+        .to(svgRef.current!.children, {
+          x: "random(-1000, 1000)",
+          y: "random(-1000, 1000)",
+          opacity: 0,
+          scale: 0,
+          rotation: "random(-720, 720)",
+          duration: 1,
+          stagger: stagger_val,
+          ease: "power4.in",
+          scrollTrigger: {
+            trigger: svgRef.current,
+            start: "top top",
+            end: "100% top",
+            scrub: 2,
+            pin: true,
+            pinSpacing: true, //default is true
+          },
+        })
+        .to(scrollDownArrowRef.current, {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: scrollDownArrowRef.current,
+            start: "top 82%",
+            end: "75% 82%",
+            scrub: true,
+            toggleActions: "play none none reverse",
+          },
+        })
+        .to(scrollTopArrowRef.current, {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: container.current,
+            start: "bottom 50%",
+            end: "bottom 40%",
+            scrub: true,
+            toggleActions: "play none none reverse",
+          },
+        });
     }, container);
     () => () => {
       ctx.revert();
@@ -79,8 +107,33 @@ const Hero = () => {
   }, []);
 
   return (
-    <figure ref={container}>
+    <figure ref={container} className="relative">
       <HeroSvg ref={svgRef} />
+      <span
+        ref={scrollDownArrowRef}
+        className="absolute left-1/2 top-[85vh] inline-flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-blue-700 p-2.5"
+      >
+        <Image
+          src={chevronIcon}
+          alt="scroll down arrow"
+          priority
+          className="h-4 w-4 -rotate-90"
+        />
+      </span>
+      <button
+        ref={scrollTopArrowRef}
+        className="fixed bottom-4 right-4 z-10 opacity-0"
+        onClick={handleClick}
+      >
+        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-700 p-2.5 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300">
+          <Image
+            src={chevronIcon}
+            alt="scroll up arrow"
+            priority
+            className="h-4 w-4 rotate-90"
+          />
+        </span>
+      </button>
     </figure>
   );
 };
