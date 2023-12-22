@@ -20,7 +20,7 @@ const Hero = () => {
   const handleClick = () => {
     if (typeof window !== "undefined") {
       window.scrollTo({
-        top: 100,
+        top: 0,
         behavior: "smooth",
       });
     }
