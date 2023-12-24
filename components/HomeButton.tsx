@@ -5,8 +5,8 @@ import React, { FC } from "react";
 
 const HomeButton: FC = () => {
   return (
-    <Link href="/">
-      <span className="ml-2 mt-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-700 p-2.5 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 lg:ml-4 lg:mt-4">
+    <Link href="/" className="group rounded-full focus:outline-none">
+      <span className="z-10 ml-2 mt-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-secondary-100 p-2.5 group-hover:bg-secondary-300 group-focus:outline-none group-focus:ring-4 group-focus:ring-secondary-200 lg:ml-4 lg:mt-4">
         <Image
           priority
           src={chevronIcon}

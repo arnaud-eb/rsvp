@@ -28,22 +28,24 @@ const Stepper: FC<StepperProps> = ({ currentStep, setCurrentStep }) => {
                   : ""
               } ${
                 pastStep
-                  ? "text-blue-600 after:border-blue-100"
-                  : "after:border-gray-100"
+                  ? "text-secondary-100 after:border-secondary-100"
+                  : "after:border-primary-900"
               }`}
             >
               <button
                 onClick={() => {
                   if (index <= currentStep) setCurrentStep(index);
                 }}
-                className={`flex items-center ${
+                className={`group flex items-center rounded-full focus:outline-none ${
                   index > currentStep ? "cursor-not-allowed" : "cursor-pointer"
                 }`}
                 disabled={index > currentStep}
               >
                 <span
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full lg:h-12 lg:w-12 ${
-                    pastStep ? "bg-blue-100" : "bg-gray-100"
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full group-focus:outline-none group-focus:ring-4 lg:h-12 lg:w-12 ${
+                    pastStep
+                      ? "bg-secondary-100 group-hover:bg-secondary-300 group-focus:ring-secondary-200"
+                      : "bg-primary-900 group-focus:ring-primary-500"
                   }`}
                 >
                   {pastStep ? (

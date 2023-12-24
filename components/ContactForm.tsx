@@ -13,10 +13,10 @@ type Inputs = z.infer<typeof contactFormDataSchema>;
 
 export const FormSkeleton: FC = () => (
   <div role="status" className="mx-auto w-3/4 animate-pulse">
-    <div className="mb-3 h-10 w-full rounded-lg bg-gray-200 md:mb-5"></div>
-    <div className="mb-3 h-10 w-full rounded-lg bg-gray-200 md:mb-5"></div>
-    <div className="mb-3 h-20 rounded-lg bg-gray-200 md:mb-5"></div>
-    <div className="h-10 w-24 rounded-lg bg-gray-200"></div>
+    <div className="bg-gray-200 mb-3 h-10 w-full rounded md:mb-5"></div>
+    <div className="bg-gray-200 mb-3 h-10 w-full rounded md:mb-5"></div>
+    <div className="bg-gray-200 mb-3 h-20 rounded md:mb-5"></div>
+    <div className="bg-gray-200 h-10 w-24 rounded"></div>
     <span className="sr-only">Loading...</span>
   </div>
 );
@@ -58,13 +58,13 @@ const ContactForm: FC = () => {
 
   return isFormSubmitted ? (
     <Confirmation>
-      <h3 className="text-xl font-bold text-red-900">
-        On a bien reçu le message. Merci!
+      <h3 className="text-red-900 text-xl font-bold">
+        On a bien reçu ton message. Merci!
       </h3>
     </Confirmation>
   ) : (
     <form onSubmit={handleSubmit(onSubmit)} className="mx-auto w-3/4">
-      <div className="mb-3 md:mb-5">
+      <div className="mb-2 md:mb-3">
         <label htmlFor="firstName" className="hidden">
           Prénom
         </label>
@@ -72,20 +72,20 @@ const ContactForm: FC = () => {
           id="firstName"
           autoComplete="given-name"
           placeholder="Prénom"
-          className={`block w-full rounded-lg border p-2.5 text-sm shadow-sm sm:py-1 ${
+          className={`shadow-input-form block w-full rounded border bg-primary-200 p-2 text-sm sm:py-1 ${
             errors.firstName?.message
-              ? "border-red-500 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-500 focus:ring-red-500"
-              : "border-gray-300 bg-gray-50 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+              ? "border-alerts-400 text-alerts-900 placeholder-alerts-700 focus:border-alerts-400 focus:ring-alerts-400"
+              : "border-secondary-300 focus:border-neutral-900 focus:ring-neutral-900"
           }`}
           {...register("firstName")}
         />
         {errors.firstName?.message && (
-          <p className="mt-2 text-sm text-red-600">
+          <p className="mt-1 text-sm text-alerts-600">
             {errors.firstName.message}
           </p>
         )}
       </div>
-      <div className="mb-3 md:mb-5">
+      <div className="mb-2 md:mb-3">
         <label htmlFor="lastName" className="hidden">
           Nom
         </label>
@@ -93,11 +93,11 @@ const ContactForm: FC = () => {
           id="lastName"
           autoComplete="family-name"
           placeholder="Nom"
-          className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:py-1"
+          className="shadow-input-form block w-full rounded border border-secondary-300 bg-primary-200 p-2 text-sm focus:border-neutral-900 focus:ring-neutral-900 sm:py-1"
           {...register("lastName")}
         />
       </div>
-      <div className="mb-3 md:mb-5">
+      <div className="mb-2 md:mb-3">
         <label htmlFor="message" className="hidden">
           Message
         </label>
@@ -105,22 +105,22 @@ const ContactForm: FC = () => {
           id="message"
           placeholder="Message"
           rows={3}
-          className={`block w-full rounded-lg border p-2.5 text-sm shadow-sm sm:py-1 ${
+          className={`shadow-input-form block w-full rounded border bg-primary-200 p-2 text-sm sm:py-1 ${
             errors.message?.message
-              ? "border-red-500 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-500 focus:ring-red-500"
-              : "border-gray-300 bg-gray-50 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+              ? "border-alerts-400 text-alerts-900 placeholder-alerts-700 focus:border-alerts-400 focus:ring-alerts-400"
+              : "border-secondary-300 focus:border-neutral-900 focus:ring-neutral-900"
           }`}
           {...register("message")}
         />
         {errors.message?.message && (
-          <p className="mt-2 text-sm text-red-600">{errors.message.message}</p>
+          <p className="mt-1 text-sm text-alerts-600">
+            {errors.message.message}
+          </p>
         )}
       </div>
       <button
         type="submit"
-        className="rounded-lg bg-blue-700 px-5 py-2.5
-        text-center text-sm font-medium text-white hover:bg-blue-800
-        focus:outline-none focus:ring-4 focus:ring-blue-300"
+        className="shadow-details flex w-28 items-center justify-center rounded border-2 border-solid border-secondary-300 bg-exclusive-500 px-4 py-1 text-center font-medium hover:bg-exclusive-800 focus:outline-none focus:ring-4 focus:ring-exclusive-300"
       >
         Envoyer
       </button>

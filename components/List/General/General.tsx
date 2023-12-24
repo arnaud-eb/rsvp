@@ -32,13 +32,18 @@ const General: FC<{ section: GeneralType; index: number }> = ({
       <GeneralItem isReversed={isReversed} distance={-100}>
         <Info />
       </GeneralItem>
-      <GeneralItem isReversed={isReversed} distance={100}>
+      <GeneralItem
+        isReversed={isReversed}
+        distance={100}
+        className="relative rounded-ee-3xl rounded-es-lg rounded-se-lg rounded-ss-3xl"
+      >
         <Image
           src={src}
           alt={alt}
           sizes="(min-width: 640px) 50vw, 90vw"
           className="rounded-ee-3xl rounded-es-lg rounded-se-lg rounded-ss-3xl"
         />
+        <div className="absolute bottom-0 left-0 h-1/2 w-full rounded-ee-3xl rounded-es-lg bg-gradient-to-t from-[#000] opacity-50" />
       </GeneralItem>
     </div>
   );

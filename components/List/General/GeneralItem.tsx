@@ -9,12 +9,14 @@ import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 interface GeneralItemProps {
   isReversed: boolean;
   distance: number;
+  className?: string;
 }
 
 const GeneralItem: FCC<GeneralItemProps> = ({
   children,
   isReversed,
   distance,
+  className,
 }) => {
   const containerRef = useRef(null);
 
@@ -60,7 +62,9 @@ const GeneralItem: FCC<GeneralItemProps> = ({
   return (
     <article
       ref={containerRef}
-      className="h-[90vw] min-h-[360px] w-[90vw] min-w-[360px] sm:h-auto sm:min-h-min sm:w-[48%] sm:min-w-min"
+      className={`z-10 h-[90vw] min-h-[360px] w-[90vw] min-w-[360px] shadow-2xl sm:h-auto sm:min-h-min sm:w-[48%] sm:min-w-min ${
+        className ? className : ""
+      } `}
     >
       {children}
     </article>

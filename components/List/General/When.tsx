@@ -72,11 +72,11 @@ const When: FC = () => {
   return (
     <div
       ref={containerRef}
-      className="flex h-full w-full flex-col items-center justify-around bg-black px-2 py-6 text-white"
+      className="text-white relative flex h-full w-full flex-col items-center justify-around border-4 border-solid border-secondary-300 bg-neutral-500 px-2 py-6"
     >
       <div
         ref={titleRef}
-        className="flex w-full justify-center text-5xl font-bold sm:text-4xl md:text-5xl"
+        className="flex w-full justify-center text-5xl font-bold text-secondary-500 sm:text-4xl md:text-5xl"
       >
         <TbCalendarHeart />
         <h1 className="ml-3">Quand?</h1>
@@ -107,6 +107,7 @@ const When: FC = () => {
           hideBranding
         ></AddToCalendarButton>
       </div>
+      <div className="curtain-stripe" />
     </div>
   );
 };

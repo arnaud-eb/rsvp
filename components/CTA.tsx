@@ -88,9 +88,9 @@ const CTA: FC = () => {
     >
       <div
         ref={subContainerRef}
-        className="preserve-3d z-0 h-[90vw] min-h-[360px] w-[90vw] min-w-[360px] sm:h-auto sm:w-[48%] sm:min-w-min lg:min-h-[475px]"
+        className="preserve-3d z-0 h-[90vw] min-h-[360px] w-[90vw] min-w-[360px] shadow-2xl sm:h-auto sm:w-[48%] sm:min-w-min lg:min-h-[475px]"
       >
-        <div className="backface-invisible absolute flex h-full w-full flex-col items-center justify-evenly bg-black px-2 py-6 text-white sm:py-2 md:py-6">
+        <div className="backface-invisible text-white absolute flex h-full w-full flex-col items-center justify-evenly border-4 border-solid border-secondary-300 bg-exclusive-500 px-2 py-6 sm:py-2 md:py-6">
           <h1
             ref={titleRef}
             className="text-center text-5xl font-bold sm:text-4xl md:text-5xl"
@@ -102,26 +102,28 @@ const CTA: FC = () => {
             className="flex w-5/6 justify-evenly text-4xl font-semibold sm:w-full sm:text-3xl md:text-4xl"
           >
             <Link
-              className="w-28 rounded-full bg-green-700 px-5 py-2.5 text-center font-medium hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300"
+              className="shadow-details flex w-28 items-center justify-center rounded border-2 border-solid border-secondary-300 bg-primary-500 px-4 py-1 text-center font-medium hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"
               href="/rsvp"
             >
               Oui
             </Link>
             <button
-              className="w-28 rounded-full bg-red-700 px-5 py-2.5 text-center font-medium hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300"
+              className="shadow-details flex w-28 items-center justify-center rounded border-2 border-solid border-secondary-300 bg-tertiary-500 px-4 py-1 text-center font-medium hover:bg-tertiary-800 focus:outline-none focus:ring-4 focus:ring-tertiary-300"
               onClick={handleClick}
             >
               Non
             </button>
           </div>
+          <div className="curtain-stripe" />
         </div>
         {isFormVisible && (
-          <div className="backface-invisible rotate-y-180 absolute flex h-full w-full flex-col items-center justify-evenly bg-black px-2 py-6 text-white sm:py-2 md:py-6">
-            <h1 className="mb-3 px-8 text-lg font-semibold sm:text-sm md:mb-5 md:text-lg">
+          <div className="backface-invisible rotate-y-180 bg-black text-white absolute flex h-full w-full flex-col items-center justify-evenly border-4 border-solid border-secondary-300 bg-tertiary-900 px-2 py-6 sm:py-2 md:py-6">
+            <h1 className="mb-3 px-8 text-lg font-semibold leading-4 sm:text-sm md:mb-5 md:text-lg md:leading-5">
               Tu vas nous manquer mais ce n&apos;est que partie remise! Laisse
               nous un petit message.
             </h1>
             <ContactFormWithCustomLoading />
+            <div className="curtain-stripe" />
           </div>
         )}
       </div>

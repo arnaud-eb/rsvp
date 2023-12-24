@@ -111,7 +111,7 @@ const Hero = () => {
       <HeroSvg ref={svgRef} />
       <span
         ref={scrollDownArrowRef}
-        className="absolute left-[calc(50%-1.25rem)] top-[78vh] inline-flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-blue-700 p-2.5"
+        className="absolute left-[calc(50%-1.25rem)] top-[78vh] inline-flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-secondary-100 p-2.5"
       >
         <Image
           src={chevronIcon}
@@ -122,10 +122,10 @@ const Hero = () => {
       </span>
       <button
         ref={scrollTopArrowRef}
-        className="fixed bottom-4 right-4 z-10 opacity-0"
+        className="fixed bottom-4 right-4 z-20 opacity-0"
         onClick={handleClick}
       >
-        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-700 p-2.5 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300">
+        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-secondary-100 p-2.5 hover:bg-secondary-300 focus:outline-none focus:ring-4 focus:ring-secondary-200">
           <Image
             src={chevronIcon}
             alt="scroll up arrow"

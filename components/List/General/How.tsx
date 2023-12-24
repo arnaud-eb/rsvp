@@ -53,87 +53,81 @@ const How: FC = () => {
   return (
     <div
       ref={containerRef}
-      className="flex h-full w-full flex-col items-center justify-evenly bg-black p-2 text-white"
+      className="text-white relative flex h-full w-full flex-col items-center justify-evenly border-4 border-solid border-secondary-300 bg-tertiary-900 p-2"
     >
       <div
         ref={titleRef}
-        className="flex w-full justify-center text-5xl font-bold sm:text-4xl"
+        className="flex w-full justify-center text-5xl font-bold text-secondary-500 sm:text-4xl"
       >
         <GoProjectRoadmap />
         <h1 className="ml-3">Comment?</h1>
       </div>
       <ul
         ref={infoRef}
-        className="my-2 grid w-full grow gap-3 sm:my-0 sm:gap-0.5 md:gap-3 lg:gap-2"
+        // className="my-2 grid w-full grow gap-3 sm:my-0 sm:gap-0.5 md:gap-3 lg:gap-2"
+        className="grid w-11/12 gap-2 md:w-5/6"
       >
-        <li className="flex items-center rounded-lg bg-fuchsia-500 p-1.5 sm:p-0 md:p-1.5">
-          <PiDress className="shrink-0 basis-6 text-2xl sm:hidden md:block" />
-          <div className="ml-1">
-            <h2 className="text-sm font-semibold">Dress code</h2>
-            <p className="text-xs">Sur ton 31 ou en claquettes-chaussettes</p>
-          </div>
-        </li>
-        <li className="flex items-center rounded-lg bg-fuchsia-500 p-1.5 sm:p-0 md:p-1.5">
-          <MdOutlineHotel className="shrink-0 basis-6 text-2xl sm:hidden md:block" />
-          <div className="ml-1">
-            <h2 className="text-sm font-semibold">Gîte ou hôtel</h2>
-            {/* logement */}
-            {/* Il y a un gite et un hotel sur place si tu veux faire la fete avec nous jusqu'au bout de la nuit */}
-            <p className="text-xs">
-              Oublie pas ton sac de couchage et ta serviette de bain pour le{" "}
-              <a
-                className="font-semibold text-green-500 hover:text-red-600"
-                href="https://gite-maisonblanche.com/location-gite-de-grand-capacite-meuse/"
-                target="_blank"
-              >
-                gîte
-              </a>
-              . Si tu préfères le comfort de{" "}
-              <a
-                className="font-semibold text-green-500 hover:text-red-600"
-                href="http://www.lessorbiers.com/views/FR/sorbiers/chambres.html"
-                target="_blank"
-              >
-                l&apos;hôtel
-              </a>
-              , on te laisse les{" "}
-              <a
-                className="font-semibold text-green-500 hover:text-red-600"
-                href="http://www.lessorbiers.com/views/FR/sorbiers/contact.html"
-                target="_blank"
-              >
-                contacter
-              </a>{" "}
-              directement (Mariage Peduzzi-Depierreux).
+        <li className="flex items-center justify-between rounded-full bg-primary-200 p-1 shadow">
+          <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary-900 text-2xl">
+            <PiDress />
+          </span>
+          <div className="ml-4 grow">
+            <h2 className="text-lg font-semibold text-secondary-300 sm:text-sm md:text-lg">
+              Dress code
+            </h2>
+            <p className="text-sm text-primary-900 sm:text-xs md:text-sm">
+              Sur ton 31 ou en claquettes-chaussettes.
             </p>
           </div>
         </li>
-        <li className="flex items-center rounded-lg bg-fuchsia-500 p-1.5 sm:p-0 md:p-1.5">
-          <MdOutlineChildFriendly className="shrink-0 basis-6 text-2xl sm:hidden md:block" />
-          <div className="ml-1">
-            <h2 className="text-sm font-semibold">Sans les enfants...</h2>
-            <p className="text-xs">...la fête est plus folle 😜</p>
+        <li className="flex items-center justify-between rounded-full bg-primary-200 p-1 shadow">
+          <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary-900 text-2xl">
+            <MdOutlineHotel />
+          </span>
+          <div className="ml-4 grow">
+            <h2 className="text-lg font-semibold text-secondary-300 sm:text-sm md:text-lg">
+              Logement
+            </h2>
+            <p className="text-sm text-primary-900 sm:text-xs md:text-sm">
+              Il y a un gîte et un hôtel sur place.
+            </p>
           </div>
         </li>
-        <li className="flex items-center rounded-lg bg-fuchsia-500 p-1.5 sm:p-0 md:p-1.5">
-          <LuPartyPopper className="shrink-0 basis-6 text-2xl sm:hidden md:block" />
-          <div className="ml-1">
-            <h2 className="text-sm font-semibold">
-              Les mains vides et en pleine forme
+        <li className="flex items-center justify-between rounded-full bg-primary-200 p-1 shadow">
+          <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary-900 text-2xl">
+            <MdOutlineChildFriendly />
+          </span>
+          <div className="ml-4 grow">
+            <h2 className="text-lg font-semibold text-secondary-300 sm:text-sm md:text-lg">
+              Sans les enfants...
             </h2>
-            <p className="text-xs">
-              Si tu en as envie, tu peux{" "}
+            <p className="text-sm text-primary-900 sm:text-xs md:text-sm">
+              ...la fête est plus folle 😜
+            </p>
+          </div>
+        </li>
+        <li className="flex items-center justify-between rounded-full bg-primary-200 p-1 shadow">
+          <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary-900 text-2xl">
+            <LuPartyPopper />
+          </span>
+          <div className="ml-4 grow">
+            <h2 className="text-lg font-semibold text-secondary-300 sm:text-sm md:text-lg">
+              Les mains vides
+            </h2>
+            <p className="text-sm text-primary-900 sm:text-xs md:text-sm">
+              On repart en{" "}
               <Link
-                className="font-semibold text-green-500 hover:text-red-600"
+                className="font-semibold text-secondary-300 hover:text-neutral-900"
                 href="/cadeau"
               >
-                contribuer à notre voyage en Argentine
-              </Link>
-              . (Oui, on retente le coup)
+                Argentine
+              </Link>{" "}
+              si tu insistes 👀
             </p>
           </div>
         </li>
       </ul>
+      <div className="curtain-stripe" />
     </div>
   );
 };

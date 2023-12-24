@@ -51,16 +51,19 @@ const Anniversary: FC = () => {
   }, []);
 
   return (
-    <article ref={containerRef}>
+    <article
+      ref={containerRef}
+      className="shadow-details bg-anniversary rounded border-2 border-solid border-secondary-300 bg-neutral-300 px-4 py-1"
+    >
       <h1
         ref={titleRef}
-        className="sm:p-y12 relative py-4 text-2xl sm:text-4xl"
+        className="sm:p-y12 relative py-4 text-center text-2xl sm:text-4xl"
       >
         {days > 0 ? (
           <>
             <p className="inline">...nous ça fait </p>
             <span ref={counterRef}>1</span>
-            <p className="inline"> ans qu&apos;on attend</p>
+            <p className="inline"> ans qu&apos;on attend!</p>
           </>
         ) : (
           <p>Viens trinquer avec nous!</p>

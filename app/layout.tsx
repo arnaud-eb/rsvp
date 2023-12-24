@@ -1,11 +1,20 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Catamaran, Palanquin_Dark } from "next/font/google";
 
 import SmoothScrolling from "@/components/SmoothScrolling";
 
-// import { Inter } from "next/font/google";
-
-// const inter = Inter({ subsets: ["latin"] });
+const catamaran = Catamaran({
+  subsets: ["latin"],
+  variable: "--font-catamaran",
+  display: "swap",
+});
+const palanquin_dark = Palanquin_Dark({
+  weight: "600",
+  subsets: ["latin"],
+  variable: "--font-palanquin-dark",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Justine et Arnaud",
@@ -17,12 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      {/* <body className="flex items-center justify-center h-screen w-screen m-0 text-black bg-white"> */}
-      <body>
+    <html
+      lang="en"
+      className={`${catamaran.variable} ${palanquin_dark.variable}`}
+    >
+      <body className="relative bg-primary-400">
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
-      {/* <body className="bg-yellow-200 bg-gradient-radial from-yellow-600 from-10% via-transparent via-11% bg-[length:20px_20px] bg-repeat overflow-hidden">{children}</body> */}
     </html>
   );
 }
