@@ -382,7 +382,7 @@ const RSVP: FC = () => {
                 <p className="text-gray-500 text-sm font-light">
                   On met à disposition un{" "}
                   <a
-                    className="text-blue-600 font-semibold hover:underline"
+                    className="font-semibold text-secondary-900 hover:text-primary-900"
                     href="https://gite-maisonblanche.com/location-gite-de-grand-capacite-meuse/"
                     target="_blank"
                   >
@@ -391,7 +391,7 @@ const RSVP: FC = () => {
                   de 51 lits et pour ceux qui désirent plus de confort, il y a
                   également un{" "}
                   <a
-                    className="text-blue-600 font-semibold hover:underline"
+                    className="font-semibold text-secondary-900 hover:text-primary-900"
                     href="http://www.lessorbiers.com/views/FR/sorbiers/chambres.html"
                     target="_blank"
                   >
@@ -454,7 +454,7 @@ const RSVP: FC = () => {
                           ? "On te laisse les "
                           : "On vous laisse les "}
                         <a
-                          className="text-blue-600 font-semibold hover:underline"
+                          className="font-semibold text-secondary-900 hover:text-primary-900"
                           href="http://www.lessorbiers.com/views/FR/sorbiers/contact.html"
                           target="_blank"
                         >
@@ -511,8 +511,8 @@ const RSVP: FC = () => {
                   <textarea
                     id="message"
                     rows={4}
-                    placeholder="Voir Arnaud et Justine tenter le saut de l'ange dans Dirty Dancing"
-                    className="border-gray-300 bg-gray-50 text-gray-900 focus:border-blue-500 focus:ring-blue-500 block w-full rounded-lg border p-2.5 text-sm"
+                    placeholder="Voir Arnaud et Justine tenter le saut de l'ange"
+                    className="text-gray-900 shadow-input-form block w-full rounded border border-secondary-300 bg-tertiary-900 p-2.5 text-sm focus:border-exclusive-900 focus:ring-exclusive-900"
                     {...register("message")}
                   />
                 </div>
