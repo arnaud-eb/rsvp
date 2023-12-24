@@ -18,6 +18,11 @@ const palanquin_dark = Palanquin_Dark({
 
 export const metadata: Metadata = {
   title: "Justine et Arnaud",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 export default function RootLayout({

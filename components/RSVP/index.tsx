@@ -119,11 +119,8 @@ const RSVP: FC = () => {
       <Stepper currentStep={currentStep} setCurrentStep={setCurrentStep} />
       <div className="relative w-full border-4 border-solid border-secondary-300 bg-neutral-400 sm:max-w-md lg:mt-0 xl:p-0">
         <div className="rsvp-gradient-shadow absolute h-full w-full border-4 border-solid border-secondary-300" />
-        <div className="max-h-[80vh] overflow-scroll">
-          <form
-            className="mx-auto max-w-sm overflow-scroll px-4"
-            onSubmit={handleSubmit(onSubmit)}
-          >
+        <div className="mx-auto max-w-sm overflow-x-auto">
+          <form className="px-4" onSubmit={handleSubmit(onSubmit)}>
             {currentStep === 0 && (
               <Step delta={delta} currentStep={currentStep}>
                 <h2 className="text-gray-900 text-xl font-bold leading-tight tracking-tight md:text-2xl">
