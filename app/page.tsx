@@ -1,8 +1,8 @@
 import dynamic from "next/dynamic";
 
 import Hero from "@/components/Hero";
-import Title from "@/components/Title";
 
+const Title = dynamic(() => import("@/components/Title"));
 const List = dynamic(() => import("@/components/List"));
 const CTA = dynamic(() => import("@/components/CTA"));
 
