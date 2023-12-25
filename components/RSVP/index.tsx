@@ -117,23 +117,23 @@ const RSVP: FC = () => {
   return (
     <section className="mx-auto flex flex-col items-center justify-center px-6 pb-8 pt-2 lg:h-[90%] lg:flex-row lg:py-0">
       <Stepper currentStep={currentStep} setCurrentStep={setCurrentStep} />
-      <div className="relative w-full border-4 border-solid border-secondary-300 bg-neutral-400 sm:max-w-md lg:mt-0 xl:p-0">
+      <div className="relative w-full border-4 border-solid border-secondary-300 bg-neutral-200 sm:max-w-md lg:mt-0 xl:p-0">
         <div className="rsvp-gradient-shadow absolute h-full w-full border-4 border-solid border-secondary-300" />
         <div className="mx-auto max-w-sm overflow-x-auto">
           <form className="px-4" onSubmit={handleSubmit(onSubmit)}>
             {currentStep === 0 && (
               <Step delta={delta} currentStep={currentStep}>
-                <h2 className="text-gray-900 text-xl font-bold leading-tight tracking-tight md:text-2xl">
+                <h2 className="text-gray-900 text-2xl font-bold leading-tight tracking-tight md:text-3xl">
                   {steps[0].name}
                 </h2>
-                <p className="text-sm font-light text-secondary-400">
+                <p className="text-base font-light text-secondary-400">
                   Qui sera de la partie?
                 </p>
                 <div>
                   <div className="mb-5">
                     <label
                       htmlFor="email"
-                      className="text-gray-900 mb-2 block text-sm font-medium"
+                      className="text-gray-900 mb-2 block text-base font-medium"
                     >
                       Email
                     </label>
@@ -142,7 +142,7 @@ const RSVP: FC = () => {
                       type="email"
                       autoComplete="email"
                       placeholder="gaston.lagaffe@gmail.com"
-                      className={`shadow-input-form block w-full rounded border bg-tertiary-900 p-2.5 text-sm ${
+                      className={`shadow-input-form block w-full rounded border bg-tertiary-700 p-2.5 text-base ${
                         errors.email?.message
                           ? "border-alerts-400 text-alerts-900 placeholder-alerts-700 focus:border-alerts-400 focus:ring-alerts-400"
                           : "border-secondary-300 focus:border-exclusive-900 focus:ring-exclusive-900"
@@ -150,7 +150,7 @@ const RSVP: FC = () => {
                       {...register("email")}
                     />
                     {errors.email?.message && (
-                      <p className="mt-2 text-sm text-alerts-600">
+                      <p className="mt-2 text-base text-alerts-600">
                         {errors.email.message}
                       </p>
                     )}
@@ -181,13 +181,14 @@ const RSVP: FC = () => {
                       <input
                         type="number"
                         id="guests-input"
-                        className="block h-11 w-full border-x-0 border-secondary-300 bg-tertiary-900 pb-6 text-center text-sm font-medium focus:border-exclusive-100 focus:ring-exclusive-100"
+                        tabIndex={-1}
+                        className="block h-11 w-full border-x-0 border-secondary-300 bg-tertiary-700 pb-6 text-center text-base font-medium focus:border-exclusive-100 focus:ring-exclusive-100"
                         value={fields.length}
                         min={1}
                         max={2}
                         readOnly
                       />
-                      <div className="text-gray-400 absolute bottom-1 start-1/2 flex -translate-x-1/2 items-center space-x-1 text-xs rtl:translate-x-1/2 rtl:space-x-reverse">
+                      <div className="text-gray-400 absolute bottom-1 start-1/2 flex -translate-x-1/2 items-center space-x-1 text-sm rtl:translate-x-1/2 rtl:space-x-reverse">
                         <svg
                           className="h-2.5 w-2.5"
                           aria-hidden="true"
@@ -232,14 +233,14 @@ const RSVP: FC = () => {
               <Step delta={delta} currentStep={currentStep}>
                 {fields.map((field, index) => (
                   <div key={field.id}>
-                    <h3 className="text-gray-900 mb-2 text-base font-medium">
+                    <h3 className="text-gray-900 mb-2 text-lg font-medium">
                       Invité {index + 1}
                     </h3>
                     <div className="mb-5">
                       <div>
                         <label
                           htmlFor="firstName"
-                          className="text-gray-900 mb-2 block text-sm font-medium"
+                          className="text-gray-900 mb-2 block text-base font-medium"
                         >
                           Prénom
                         </label>
@@ -247,7 +248,7 @@ const RSVP: FC = () => {
                           id="firstName"
                           autoComplete="given-name"
                           placeholder="Gaston"
-                          className={`shadow-input-form block w-full rounded border bg-tertiary-900 p-2.5 text-sm ${
+                          className={`shadow-input-form block w-full rounded border bg-tertiary-700 p-2.5 text-base ${
                             errors.guests?.[index]?.firstName?.message
                               ? "border-alerts-400 text-alerts-900 placeholder-alerts-700 focus:border-alerts-400 focus:ring-alerts-400"
                               : "border-secondary-300 focus:border-exclusive-900 focus:ring-exclusive-900"
@@ -255,7 +256,7 @@ const RSVP: FC = () => {
                           {...register(`guests.${index}.firstName` as const)}
                         />
                         {errors.guests?.[index]?.firstName?.message && (
-                          <p className="mt-2 text-sm text-alerts-600">
+                          <p className="mt-2 text-lg text-alerts-600">
                             {errors.guests?.[index]?.firstName?.message}
                           </p>
                         )}
@@ -264,7 +265,7 @@ const RSVP: FC = () => {
                     <div className="mb-5">
                       <label
                         htmlFor="lastName"
-                        className="text-gray-900 mb-2 block text-sm font-medium"
+                        className="text-gray-900 mb-2 block text-base font-medium"
                       >
                         Nom
                       </label>
@@ -273,7 +274,7 @@ const RSVP: FC = () => {
                         type="text"
                         autoComplete="family-name"
                         placeholder="Lagaffe"
-                        className={`shadow-input-form block w-full rounded border bg-tertiary-900 p-2.5 text-sm ${
+                        className={`shadow-input-form block w-full rounded border bg-tertiary-700 p-2.5 text-base ${
                           errors.guests?.[index]?.lastName?.message
                             ? "border-alerts-400 text-alerts-900 placeholder-alerts-700 focus:border-alerts-400 focus:ring-alerts-400"
                             : "border-secondary-300 focus:border-exclusive-900 focus:ring-exclusive-900"
@@ -281,7 +282,7 @@ const RSVP: FC = () => {
                         {...register(`guests.${index}.lastName` as const)}
                       />
                       {errors.guests?.[index]?.lastName?.message && (
-                        <p className="mt-2 text-sm text-alerts-600">
+                        <p className="mt-2 text-base text-alerts-600">
                           {errors.guests?.[index]?.lastName?.message}
                         </p>
                       )}
@@ -289,7 +290,7 @@ const RSVP: FC = () => {
                     <div className="mb-5">
                       <label
                         htmlFor="dietaryRestrictions"
-                        className="text-gray-900 mb-2 block text-sm font-medium"
+                        className="text-gray-900 mb-2 block text-base font-medium"
                       >
                         Allergies ou restrictions alimentaires
                       </label>
@@ -297,7 +298,7 @@ const RSVP: FC = () => {
                         id="dietaryRestrictions"
                         type="text"
                         placeholder="Les crustacés et produits à base de crustacés"
-                        className="text-gray-900 shadow-input-form block w-full rounded border border-secondary-300 bg-tertiary-900 p-2.5 text-sm focus:border-exclusive-900 focus:ring-exclusive-900"
+                        className="text-gray-900 shadow-input-form block w-full rounded border border-secondary-300 bg-tertiary-700 p-2.5 text-base focus:border-exclusive-900 focus:ring-exclusive-900"
                         {...register(
                           `guests.${index}.dietaryRestrictions` as const,
                         )}
@@ -309,10 +310,10 @@ const RSVP: FC = () => {
             )}
             {currentStep === 2 && (
               <Step delta={delta} currentStep={currentStep}>
-                <h2 className="text-gray-900 text-xl font-bold leading-tight tracking-tight md:text-2xl">
+                <h2 className="text-gray-900 text-2xl font-bold leading-tight tracking-tight md:text-3xl">
                   {steps[2].name}
                 </h2>
-                <p className="text-gray-500 text-sm font-light">
+                <p className="text-gray-500 text-base font-light">
                   {fields.length === 1
                     ? "À quelles activités participeras-tu?"
                     : "À quelles activités participerez-vous?"}
@@ -331,7 +332,7 @@ const RSVP: FC = () => {
                     />
                     <label
                       htmlFor="cocktail"
-                      className="text-gray-900 ms-2 text-sm font-medium"
+                      className="text-gray-900 ms-2 text-base font-medium"
                     >
                       Cocktail | 11 mai 2024 | 16:00
                     </label>
@@ -346,7 +347,7 @@ const RSVP: FC = () => {
                     />
                     <label
                       htmlFor="dinner"
-                      className="text-gray-900 ms-2 text-sm font-medium"
+                      className="text-gray-900 ms-2 text-base font-medium"
                     >
                       Repas | 11 mai 2024 | 19:00
                     </label>
@@ -361,13 +362,13 @@ const RSVP: FC = () => {
                     />
                     <label
                       htmlFor="brunch"
-                      className="text-gray-900 ms-2 text-sm font-medium"
+                      className="text-gray-900 ms-2 text-base font-medium"
                     >
                       Brunch | 12 mai 2024 | 11:00
                     </label>
                   </div>
                   {errors.activities && (
-                    <p className="mt-2 text-sm text-alerts-600">
+                    <p className="mt-2 text-base text-alerts-600">
                       Selectionne au moins une activité!
                     </p>
                   )}
@@ -376,10 +377,10 @@ const RSVP: FC = () => {
             )}
             {currentStep === 3 && (
               <Step delta={delta} currentStep={currentStep}>
-                <h2 className="text-gray-900 text-xl font-bold leading-tight tracking-tight md:text-2xl">
+                <h2 className="text-gray-900 text-2xl font-bold leading-tight tracking-tight md:text-3xl">
                   {steps[3].name}
                 </h2>
-                <p className="text-gray-500 text-sm font-light">
+                <p className="text-gray-500 text-base font-light">
                   On met à disposition un{" "}
                   <a
                     className="font-semibold text-secondary-900 hover:text-primary-900"
@@ -412,7 +413,7 @@ const RSVP: FC = () => {
                       aria-describedby="helper-cottage-text"
                       {...register("accommodation")}
                     />
-                    <div className="ms-2 text-sm">
+                    <div className="ms-2 text-base">
                       <label
                         htmlFor="cottage"
                         className="text-gray-900 font-medium"
@@ -421,10 +422,8 @@ const RSVP: FC = () => {
                       </label>
                       <p
                         id="helper-cottage-text"
-                        className="text-gray-500 text-xs font-normal"
+                        className="text-gray-500 text-sm font-normal"
                       >
-                        Étant donné le nombre limité de chambres, nous les
-                        attribuerons sur base du premier arrivé, premier servi.
                         {fields.length === 1
                           ? " N'oublie pas ton sac de couchage et ta serviette de bain."
                           : " N'oubliez pas vos sacs de couchage et serviettes de bain."}
@@ -439,7 +438,7 @@ const RSVP: FC = () => {
                       className="border-gray-300 focus:ring-blue-300 h-4 w-4 focus:ring-2"
                       {...register("accommodation")}
                     />
-                    <div className="ms-2 text-sm">
+                    <div className="ms-2 text-base">
                       <label
                         htmlFor="hotel"
                         className="text-gray-900 font-medium"
@@ -448,7 +447,7 @@ const RSVP: FC = () => {
                       </label>
                       <p
                         id="helper-cottage-text"
-                        className="text-gray-500 text-xs font-normal"
+                        className="text-gray-500 text-sm font-normal"
                       >
                         {fields.length === 1
                           ? "On te laisse les "
@@ -480,7 +479,7 @@ const RSVP: FC = () => {
                     />
                     <label
                       htmlFor="none"
-                      className="text-gray-900 ms-2  block text-sm font-medium"
+                      className="text-gray-900 ms-2  block text-base font-medium"
                     >
                       {fields.length === 1
                         ? "Je ne logerai pas sur place"
@@ -488,7 +487,7 @@ const RSVP: FC = () => {
                     </label>
                   </div>
                   {errors.accommodation?.message && (
-                    <p className="mt-2 text-sm text-alerts-600">
+                    <p className="mt-2 text-base text-alerts-600">
                       Selectionne ton mode de logement!
                     </p>
                   )}
@@ -497,10 +496,10 @@ const RSVP: FC = () => {
             )}
             {currentStep === 4 && (
               <Step delta={delta} currentStep={currentStep}>
-                <h2 className="text-gray-900 text-xl font-bold leading-tight tracking-tight md:text-2xl">
+                <h2 className="text-gray-900 text-2xl font-bold leading-tight tracking-tight md:text-3xl">
                   {steps[4].name}
                 </h2>
-                <p className="text-gray-500 text-sm font-light">
+                <p className="text-gray-500 text-base font-light">
                   Une demande spéciale? Une suggestion? C&apos;est le moment de
                   nous en faire part.
                 </p>
@@ -512,7 +511,7 @@ const RSVP: FC = () => {
                     id="message"
                     rows={4}
                     placeholder="Voir Arnaud et Justine tenter le saut de l'ange"
-                    className="text-gray-900 shadow-input-form block w-full rounded border border-secondary-300 bg-tertiary-900 p-2.5 text-sm focus:border-exclusive-900 focus:ring-exclusive-900"
+                    className="text-gray-900 shadow-input-form block w-full rounded border border-secondary-300 bg-tertiary-700 p-2.5 text-base focus:border-exclusive-900 focus:ring-exclusive-900"
                     {...register("message")}
                   />
                 </div>
@@ -525,11 +524,11 @@ const RSVP: FC = () => {
             )}
             {currentStep === 6 && (
               <Confirmation isRedirected={true}>
-                <h3 className="text-xl font-bold">C&apos;est confirmé!</h3>
-                <p className="text-lg">
+                <h3 className="text-2xl font-bold">C&apos;est confirmé!</h3>
+                <p className="text-xl">
                   On se réjouit de {fields.length > 1 ? "vous" : "te"} voir.
                 </p>
-                <p className="mt-5 text-base">
+                <p className="mt-5 text-lg">
                   Clique sur le bouton retour en haut à gauche ou attends 5
                   secondes avant d&apos;être redirigé vers le menu principal.
                 </p>

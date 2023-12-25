@@ -61,7 +61,7 @@ const Confirmation: FCC<ConfirmationProps> = ({
         strokeWidth="1.5"
         stroke="currentColor"
         data-slot="icon"
-        className="h-24 w-24 text-success-900"
+        className="h-24 w-24 text-success-600"
       >
         <path
           strokeLinecap="round"

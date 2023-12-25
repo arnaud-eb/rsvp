@@ -53,11 +53,11 @@ const Anniversary: FC = () => {
   return (
     <article
       ref={containerRef}
-      className="shadow-details bg-anniversary rounded border-2 border-solid border-secondary-300 bg-neutral-300 px-4 py-1"
+      className="shadow-details bg-anniversary rounded border-2 border-solid border-secondary-300 bg-neutral-300 px-2 py-1"
     >
       <h1
         ref={titleRef}
-        className="sm:p-y12 relative py-4 text-center text-2xl sm:text-4xl"
+        className="relative py-4 text-center text-xl sm:text-4xl"
       >
         {days > 0 ? (
           <>

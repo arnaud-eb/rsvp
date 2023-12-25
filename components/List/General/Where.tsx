@@ -65,7 +65,7 @@ const Where: FC = () => {
   return (
     <div
       ref={containerRef}
-      className="text-white relative flex h-full w-full flex-col items-center justify-evenly border-4 border-solid border-secondary-300 bg-exclusive-500 px-2"
+      className="text-white relative flex h-full w-full flex-col items-center justify-evenly overflow-hidden border-4 border-solid border-secondary-300 bg-exclusive-500 px-2"
     >
       <div
         ref={titleRef}

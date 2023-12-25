@@ -79,7 +79,7 @@ const Schedule: FC = () => {
       ref={containerRef}
       className="h-[90vw] min-h-[360px] w-[90vw] min-w-[360px] shadow-2xl sm:h-auto sm:min-h-min sm:w-[48%] sm:min-w-min"
     >
-      <div className="text-white relative flex h-full w-full flex-col items-center justify-evenly border-4 border-solid border-secondary-300 bg-neutral-500 p-2">
+      <div className="text-white relative flex h-full w-full flex-col items-center justify-evenly overflow-hidden border-4 border-solid border-secondary-300 bg-neutral-500 p-2">
         <div
           ref={titleRef}
           className="flex w-full justify-center text-5xl font-bold text-secondary-500 sm:text-4xl"

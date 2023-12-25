@@ -72,7 +72,7 @@ const When: FC = () => {
   return (
     <div
       ref={containerRef}
-      className="text-white relative flex h-full w-full flex-col items-center justify-around border-4 border-solid border-secondary-300 bg-neutral-500 px-2 py-6"
+      className="text-white relative flex h-full w-full flex-col items-center justify-around overflow-hidden border-4 border-solid border-secondary-300 bg-neutral-500 px-2 py-6"
     >
       <div
         ref={titleRef}

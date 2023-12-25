@@ -118,10 +118,6 @@ const CTA: FC = () => {
         </div>
         {isFormVisible && (
           <div className="backface-invisible rotate-y-180 bg-black text-white absolute flex h-full w-full flex-col items-center justify-evenly border-4 border-solid border-secondary-300 bg-tertiary-900 px-2 py-6 sm:py-2 md:py-6">
-            <h1 className="mb-3 px-8 text-lg font-semibold leading-4 sm:text-sm md:mb-5 md:text-lg md:leading-5">
-              Tu vas nous manquer mais ce n&apos;est que partie remise! Laisse
-              nous un petit message.
-            </h1>
             <ContactFormWithCustomLoading />
             <div className="curtain-stripe" />
           </div>

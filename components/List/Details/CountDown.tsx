@@ -52,17 +52,17 @@ const CountDown: FC = () => {
   return (
     <article
       ref={containerRef}
-      className="shadow-details bg-countdown rounded border-2 border-solid border-secondary-300 bg-tertiary-900 px-4 py-1"
+      className="shadow-details bg-countdown rounded border-2 border-solid border-secondary-300 bg-tertiary-900 px-2 py-1"
     >
-      <h1
-        ref={titleRef}
-        className="sm:p-y12 py-4 text-center text-2xl sm:text-4xl"
-      >
+      <h1 ref={titleRef} className="py-4 text-center text-xl sm:text-4xl">
         {days > 0 ? (
-          <>
-            Encore <span ref={countDownRef}>1</span>
+          <div className="flex">
+            Encore{" "}
+            <div className="w-12 sm:w-20" ref={countDownRef}>
+              1
+            </div>
             {` jour${days > 1 ? "s" : ""} de patience...`}
-          </>
+          </div>
         ) : (
           "C'est parti !"
         )}
