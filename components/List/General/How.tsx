@@ -5,9 +5,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import React, { FC, useRef } from "react";
 import { GoProjectRoadmap } from "react-icons/go";
-import { LuPartyPopper } from "react-icons/lu";
 import { MdOutlineHotel, MdOutlineChildFriendly } from "react-icons/md";
 import { PiDress } from "react-icons/pi";
+import { SlPresent } from "react-icons/sl";
 
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 
@@ -108,7 +108,7 @@ const How: FC = () => {
         </li>
         <li className="flex items-center justify-between rounded-full bg-primary-200 p-1 shadow">
           <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary-900 text-2xl">
-            <LuPartyPopper />
+            <SlPresent />
           </span>
           <div className="ml-4 grow">
             <h2 className="text-lg font-semibold text-secondary-300 sm:text-sm md:text-lg">
