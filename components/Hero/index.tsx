@@ -17,7 +17,16 @@ const Hero = () => {
   const scrollDownArrowRef = useRef(null);
   const scrollTopArrowRef = useRef(null);
 
-  const handleClick = () => {
+  const handleDownArrowClick = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 1320,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleTopArrowClick = () => {
     if (typeof window !== "undefined") {
       window.scrollTo({
         top: 0,
@@ -109,21 +118,24 @@ const Hero = () => {
   return (
     <figure ref={container} className="relative">
       <HeroSvg ref={svgRef} />
-      <span
+      <button
         ref={scrollDownArrowRef}
-        className="absolute left-[calc(50%-1.25rem)] top-[78vh] inline-flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-secondary-100 p-2.5"
+        className="absolute left-[calc(50%-1.25rem)] top-[78vh]"
+        onClick={handleDownArrowClick}
       >
-        <Image
-          src={chevronIcon}
-          alt="scroll down arrow"
-          priority
-          className="h-4 w-4 -rotate-90"
-        />
-      </span>
+        <span className="inline-flex h-10 w-10 animate-bounce items-center justify-center rounded-full bg-secondary-100 p-2.5 hover:bg-secondary-300 focus:outline-none focus:ring-4 focus:ring-secondary-200">
+          <Image
+            src={chevronIcon}
+            alt="scroll down arrow"
+            priority
+            className="h-4 w-4 -rotate-90"
+          />
+        </span>
+      </button>
       <button
         ref={scrollTopArrowRef}
         className="fixed bottom-4 right-4 z-20 opacity-0"
-        onClick={handleClick}
+        onClick={handleTopArrowClick}
       >
         <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-secondary-100 p-2.5 hover:bg-secondary-300 focus:outline-none focus:ring-4 focus:ring-secondary-200">
           <Image
