@@ -1,7 +1,5 @@
-import halloween from "@/public/halloween.png";
-import italy from "@/public/italy.png";
-// import norway from "@/public/norway.png";
-// import paris from "@/public/paris.png";
+import antalya from "@/public/antalya.jpeg";
+import beaufays from "@/public/beaufays.jpeg";
 import sorbiers from "@/public/sorbiers.jpeg";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
@@ -37,8 +35,8 @@ const sections: (GeneralType | DetailsType)[] = [
     type: "general",
     Info: WhenGeneral,
     image: {
-      src: italy,
-      alt: "italy",
+      src: antalya,
+      alt: "antalya",
     },
   },
   {
@@ -65,8 +63,8 @@ const sections: (GeneralType | DetailsType)[] = [
     type: "general",
     Info: HowGeneral,
     image: {
-      src: halloween,
-      alt: "halloween",
+      src: beaufays,
+      alt: "beaufays",
     },
   },
   {
