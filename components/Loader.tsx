@@ -148,7 +148,7 @@ const Loader: FC = () => {
         viewBox="0 0 600 600"
         enableBackground="new 0 0 600 600"
         xmlSpace="preserve"
-        className="translate-x-4"
+        className="translate-x-2"
       >
         <defs>
           <mask id="beerLiquidMask">
