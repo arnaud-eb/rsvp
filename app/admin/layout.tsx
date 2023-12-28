@@ -1,5 +1,7 @@
 import HomeButton from "@/components/HomeButton";
 
+export const dynamic = "force-dynamic";
+
 export default function AuthLayout({
   children,
 }: {
