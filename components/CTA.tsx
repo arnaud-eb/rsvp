@@ -19,16 +19,18 @@ const CTA: FC = () => {
   const subContainerRef = useRef(null);
   const titleRef = useRef(null);
   const ctaContainerRef = useRef<HTMLDivElement | null>(null);
+  const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    timelineRef.current!.kill();
     setIsFormVisible(true);
   };
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
       if (!isFormVisible) {
-        const tl = gsap
+        timelineRef.current = gsap
           .timeline({ defaults: { opacity: 0 }, paused: true })
           .from(titleRef.current, {
             y: 30,
@@ -44,14 +46,14 @@ const CTA: FC = () => {
         ScrollTrigger.create({
           trigger: containerRef.current,
           start: "top 70%",
-          onEnter: () => tl.play(),
+          onEnter: () => timelineRef.current!.play(),
           // markers: true,
         });
 
         ScrollTrigger.create({
           trigger: containerRef.current,
           start: "top 100%",
-          onLeaveBack: () => tl.pause(0),
+          onLeaveBack: () => timelineRef.current!.pause(0),
           // markers: true,
         });
       }
