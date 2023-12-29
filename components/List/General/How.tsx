@@ -131,14 +131,14 @@ const How: FC = () => {
               Les mains vides
             </h2>
             <p className="text-sm text-primary-900 sm:text-xs md:text-sm">
-              On repart en{" "}
+              Si tu insistes, clique{" "}
               <Link
                 className="font-semibold text-secondary-300 hover:text-neutral-900"
                 href="/cadeau"
               >
-                Argentine
+                ici
               </Link>{" "}
-              si tu insistes 👀
+              👀
             </p>
           </div>
         </li>
