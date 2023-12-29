@@ -50,19 +50,18 @@ export const addBooking = async (data: RsvpFormInputs) => {
           message: result.data.message,
         },
       });
-      result.data.guests.forEach(
-        async ({ firstName, lastName, dietaryRestrictions }) => {
-          await prisma.guest.create({
-            data: {
-              bookingId,
-              userId,
-              firstName,
-              lastName,
-              dietaryRestrictions,
-            },
-          });
-        },
-      );
+
+      for (const guest of result.data.guests) {
+        await prisma.guest.create({
+          data: {
+            bookingId,
+            userId,
+            firstName: guest.firstName,
+            lastName: guest.lastName,
+            dietaryRestrictions: guest.dietaryRestrictions,
+          },
+        });
+      }
 
       revalidatePath("/admin/bookings");
 
