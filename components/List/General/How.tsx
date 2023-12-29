@@ -89,7 +89,23 @@ const How: FC = () => {
               Logement
             </h2>
             <p className="text-sm text-primary-900 sm:text-xs md:text-sm">
-              Il y a un gîte et un hôtel sur place.
+              Il y a un{" "}
+              <a
+                className="font-semibold text-secondary-300 hover:text-neutral-900"
+                href="https://gite-maisonblanche.com/location-gite-de-grand-capacite-meuse/"
+                target="_blank"
+              >
+                gîte
+              </a>{" "}
+              et un{" "}
+              <a
+                className="font-semibold text-secondary-300 hover:text-neutral-900"
+                href="http://www.lessorbiers.com/views/FR/sorbiers/chambres.html"
+                target="_blank"
+              >
+                hôtel
+              </a>{" "}
+              sur place.
             </p>
           </div>
         </li>
