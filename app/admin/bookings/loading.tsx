@@ -4,8 +4,8 @@ import Loader from "@/components/Loader";
 
 export default function Loading() {
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-black">
-      <Loader />;
+    <div className="bg-black flex h-screen w-screen items-center justify-center">
+      <Loader />
     </div>
   );
 }
