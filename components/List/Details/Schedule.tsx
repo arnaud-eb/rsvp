@@ -140,7 +140,7 @@ const Schedule: FC = () => {
                 <p className="ml-1">Maison Blanche</p>
               </div>
             </div>
-            <div className="mr-3 font-semibold">23:00</div>
+            <div className="mr-3 font-semibold">22:00</div>
           </article>
         </section>
         <h2

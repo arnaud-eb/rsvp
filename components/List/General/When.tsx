@@ -86,8 +86,9 @@ const When: FC = () => {
           Le week-end du 11 et 12 mai 2024.
         </h2>
         <hr ref={hrRef} className="w-1/5" />
-        <p ref={textRef} className="mt-2">
-          On vous attend le 11 à partir de 16h.
+        <p ref={textRef} className="mt-2 text-center">
+          On vous attend le 11 à partir de 16h. <br />
+          Hôtel ou gîte check-in à partir de 15h.
         </p>
       </div>
       <div ref={addCalendarRef}>
