@@ -48,7 +48,6 @@ const GiftPage = () => (
               type="text"
               className="shadow-input-form block w-full rounded border border-secondary-300 bg-tertiary-700 p-2.5 text-xs text-secondary-50 lg:text-sm"
               value={IBAN.text}
-              disabled
               readOnly
             />
             <ClipboardButton target={IBAN.text} />
