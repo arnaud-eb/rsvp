@@ -111,6 +111,10 @@
     font-family: var(--font-palanquin-dark);
     color: var(--secondary-500);
   }
+
+  video {
+    border-radius: 12px;
+  }
 }
 
 @layer components {

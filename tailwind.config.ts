@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -99,6 +101,10 @@ const config: Config = {
         800: "var(--neutral-800)",
         900: "var(--neutral-900)",
       },
+    },
+    screens: {
+      xs: "475px",
+      ...defaultTheme.screens,
     },
   },
   plugins: [require("@tailwindcss/forms")],

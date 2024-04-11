@@ -1,0 +1,8 @@
+export const FINANCIAL_DATA = {
+  IBAN: {
+    text: "LU44 0030 4893 6433 0000",
+  },
+  CONTACT_DETAILS: {
+    text: "PEDUZZI - DEPIERREUX\n57 RUE DE CLAUSEN, 1342 LUXEMBOURG",
+  },
+};

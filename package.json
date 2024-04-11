@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev & npx next-video sync -w",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -22,6 +22,7 @@
     "eslint-config-next": "13.4.19",
     "gsap": "^3.12.4",
     "next": "13.4.19",
+    "next-video": "^0.17.1",
     "postcss": "^8.4.32",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
