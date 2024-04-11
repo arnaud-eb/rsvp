@@ -1,5 +1,5 @@
 import travelVideo from "@/videos/gift-travel.mp4";
-import BackgroundVideo from "next-video/background-video";
+import Video from "next-video";
 
 import ClipboardButton from "@/components/ClipboardButton";
 import { FINANCIAL_DATA } from "@/components/Gift/constants";
@@ -13,7 +13,7 @@ const GiftPage = () => (
   <main className="m-auto flex h-[calc(100vh-7rem)] w-full min-w-[350px] max-w-[1200px] items-center">
     <section className="flex w-full flex-col items-center justify-center gap-12 pt-4 xs:gap-4 sm:flex-row sm:gap-2 md:gap-4 lg:m-auto lg:w-11/12">
       <article className={`${classNameCard} rounded-xl`}>
-        <BackgroundVideo src={travelVideo} className="h-full w-full" />
+        <Video src={travelVideo} className="h-full w-full" />
       </article>
       <article
         className={`${classNameCard} relative flex flex-col justify-around border-4 border-solid border-secondary-300 bg-neutral-200 px-3 py-0 xl:py-4`}
