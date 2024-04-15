@@ -11,7 +11,7 @@ const classNameCard = "shadow-2xl aspect-square w-11/12 sm:w-1/2";
 const GiftPage = () => (
   <main className="m-auto flex w-full min-w-[350px] max-w-[1200px]">
     <section className="flex w-full flex-col items-center justify-center gap-2 px-2 py-4 sm:gap-1 md:gap-2 lg:mx-auto lg:mt-20 lg:w-11/12 lg:flex-row">
-      <article className={`${classNameCard}`}>
+      <article className={`${classNameCard} overflow-hidden rounded-lg`}>
         <Video src={travelVideo} className="h-full w-full" />
       </article>
       <article
