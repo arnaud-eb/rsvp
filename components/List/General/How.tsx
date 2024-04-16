@@ -35,14 +35,12 @@ const How: FC = () => {
         trigger: containerRef.current,
         start: "top 70%",
         onEnter: () => tl.play(),
-        // markers: true,
       });
 
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top 100%",
         onLeaveBack: () => tl.pause(0),
-        // markers: true,
       });
     }, containerRef);
     () => () => {
@@ -62,11 +60,7 @@ const How: FC = () => {
         <GoProjectRoadmap />
         <h1 className="ml-3">Comment?</h1>
       </div>
-      <ul
-        ref={infoRef}
-        // className="my-2 grid w-full grow gap-3 sm:my-0 sm:gap-0.5 md:gap-3 lg:gap-2"
-        className="grid w-11/12 gap-2 md:w-5/6"
-      >
+      <ul ref={infoRef} className="grid w-11/12 gap-2 md:w-5/6">
         <li className="flex items-center justify-between rounded-full bg-primary-200 p-1 shadow">
           <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary-900 text-2xl">
             <PiDress />
