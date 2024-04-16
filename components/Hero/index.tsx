@@ -151,29 +151,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-// duration: 2,
-// rotation: 360,
-// opacity: 1,
-// delay: 0.5,
-// stagger: 0.2,
-// ease: "sine.out",
-// force3D: true
-// x: "100vw",
-// xPercent: -100,
-// ease: "bounce.out",
-// backgroundColor: "#8d3dae",
-// repeat: 2,
-// yoyo: true,
-// scale: 0.1,
-// y: 60,
-// yoyo: true,
-// repeat: -1,
-// ease: "power1.inOut",
-// delay: 2,
-// stagger: {
-//   amount: 1.5,
-//   grid: "auto",
-//   from: "edges",
-// },
-// });
