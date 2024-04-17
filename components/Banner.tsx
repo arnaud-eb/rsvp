@@ -1,6 +1,8 @@
 "use client";
 
 import { gsap } from "gsap";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { FC, useRef } from "react";
 
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
@@ -8,6 +10,8 @@ import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 const Banner: FC = () => {
   const containerRef = useRef(null);
   const bannerRef = useRef(null);
+  const searchParams = useSearchParams();
+  const isBannerEnabled = searchParams.get("isBannerEnabled");
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -25,6 +29,8 @@ const Banner: FC = () => {
     };
   }, []);
 
+  if (!isBannerEnabled) return null;
+
   return (
     <div id="banner-container" ref={containerRef}>
       <div
@@ -38,8 +44,8 @@ const Banner: FC = () => {
             Nouveau
           </span>
           Informations de dernière minute!
-          <a
-            href="https://flowbite.com"
+          <Link
+            href="/info"
             className="ml-1 flex items-center text-exclusive-900 no-underline underline-offset-2 hover:underline xs:ml-3"
           >
             Info
@@ -57,7 +63,7 @@ const Banner: FC = () => {
                 d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
               />
             </svg>
-          </a>
+          </Link>
         </p>
       </div>
     </div>
