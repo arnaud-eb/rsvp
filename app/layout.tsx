@@ -27,8 +27,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <html
@@ -36,7 +38,10 @@ export default function RootLayout({
       className={`${catamaran.variable} ${palanquin_dark.variable}`}
     >
       <body className="relative bg-primary-400">
-        <SmoothScrolling>{children}</SmoothScrolling>
+        <SmoothScrolling>
+          {children}
+          {modal}
+        </SmoothScrolling>
       </body>
     </html>
   );

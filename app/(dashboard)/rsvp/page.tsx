@@ -9,5 +9,3 @@ const RSVPPage = () => (
 );
 
 export default RSVPPage;
-
-// and if needed they can edit the details they submitted
