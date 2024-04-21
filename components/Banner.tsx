@@ -2,7 +2,6 @@
 
 import { gsap } from "gsap";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { FC, useRef } from "react";
 
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
@@ -10,8 +9,6 @@ import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
 const Banner: FC = () => {
   const containerRef = useRef(null);
   const bannerRef = useRef(null);
-  const searchParams = useSearchParams();
-  const isBannerEnabled = searchParams.get("isBannerEnabled");
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -29,8 +26,6 @@ const Banner: FC = () => {
     };
   }, []);
 
-  if (!isBannerEnabled) return null;
-
   return (
     <div id="banner-container" ref={containerRef}>
       <div
@@ -46,7 +41,7 @@ const Banner: FC = () => {
           Informations de dernière minute!
           <Link
             href="/info"
-            className="ml-1 flex items-center text-exclusive-900 no-underline underline-offset-2 hover:underline xs:ml-3"
+            className="ml-1 flex items-center text-exclusive-900 no-underline underline-offset-2 outline-exclusive-900 hover:underline xs:ml-3"
           >
             Info
             <svg

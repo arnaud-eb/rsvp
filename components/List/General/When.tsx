@@ -72,7 +72,7 @@ const When: FC = () => {
   return (
     <div
       ref={containerRef}
-      className="text-white relative flex h-full w-full flex-col items-center justify-around overflow-hidden border-4 border-solid border-secondary-300 bg-neutral-500 px-2 py-6"
+      className="relative flex h-full w-full flex-col items-center justify-around overflow-hidden border-4 border-solid border-secondary-300 bg-neutral-500 px-2 py-6"
     >
       <div
         ref={titleRef}
@@ -85,7 +85,7 @@ const When: FC = () => {
         <h2 ref={dateRef} className="mb-2 font-semibold">
           Le week-end du 11 et 12 mai 2024.
         </h2>
-        <hr ref={hrRef} className="w-1/5" />
+        <hr ref={hrRef} className="w-1/5 border-secondary-300" />
         <p ref={textRef} className="mt-2 text-center">
           On vous attend le 11 à partir de 16h. <br />
           Hôtel ou gîte check-in à partir de 15h.
@@ -98,7 +98,7 @@ const When: FC = () => {
           location="241 rue des Sorbiers, 5543 Heer, Belgique"
           startDate="2024-05-11"
           endDate="2024-05-12"
-          startTime="16:00"
+          startTime="15:00"
           endTime="15:00"
           timeZone="Europe/Brussels"
           buttonsList

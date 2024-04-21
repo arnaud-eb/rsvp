@@ -51,7 +51,7 @@ const How: FC = () => {
   return (
     <div
       ref={containerRef}
-      className="text-white relative flex h-full w-full flex-col items-center justify-evenly overflow-hidden border-4 border-solid border-secondary-300 bg-tertiary-900 p-2"
+      className="relative flex h-full w-full flex-col items-center justify-evenly overflow-hidden border-4 border-solid border-secondary-300 bg-tertiary-900 p-2"
     >
       <div
         ref={titleRef}

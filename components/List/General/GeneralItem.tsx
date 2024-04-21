@@ -62,7 +62,7 @@ const GeneralItem: FCC<GeneralItemProps> = ({
   return (
     <article
       ref={containerRef}
-      className={`z-10 h-[90vw] min-h-[360px] w-[90vw] min-w-[360px] shadow-2xl sm:h-auto sm:min-h-min sm:w-[48%] sm:min-w-min ${
+      className={`z-10 h-[90vw] min-h-[350px] w-[90vw] min-w-[350px] shadow-2xl sm:h-auto sm:min-h-min sm:w-[48%] sm:min-w-min ${
         className ? className : ""
       } `}
     >

@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${catamaran.variable} ${palanquin_dark.variable}`}
     >
-      <body className="relative bg-primary-400">
+      <body className="relative h-auto min-h-full bg-primary-400">
         <SmoothScrolling>
           {children}
           {modal}

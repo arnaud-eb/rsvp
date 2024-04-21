@@ -105,6 +105,12 @@
   html {
     font-family: var(--font-catamaran);
     color: var(--secondary-300);
+    min-height: 100%;
+    height: auto;
+  }
+
+  html:has(dialog[open]) {
+    overflow: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {

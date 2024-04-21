@@ -65,7 +65,7 @@ const Where: FC = () => {
   return (
     <div
       ref={containerRef}
-      className="text-white relative flex h-full w-full flex-col items-center justify-evenly overflow-hidden border-4 border-solid border-secondary-300 bg-exclusive-500 px-2"
+      className="relative flex h-full w-full flex-col items-center justify-evenly overflow-hidden border-4 border-solid border-secondary-300 bg-exclusive-500 px-2"
     >
       <div
         ref={titleRef}
@@ -86,7 +86,7 @@ const Where: FC = () => {
           </h2>
           <TbCircleArrowUpRightFilled />
         </a>
-        <hr ref={hrRef} className="w-1/5" />
+        <hr ref={hrRef} className="w-1/5 border-secondary-300" />
         <a
           ref={addressRef}
           href="https://www.google.com/maps/place/Les+Sorbiers/@50.1804404,4.8218385,17z/data=!3m1!4b1!4m9!3m8!1s0x47c1ebc4192ab8cb:0xb4bc4828e4ddaf93!5m2!4m1!1i2!8m2!3d50.1804405!4d4.8267094!16s%2Fg%2F1tk_hw26?entry=ttu"

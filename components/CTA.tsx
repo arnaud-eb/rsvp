@@ -90,9 +90,9 @@ const CTA: FC = () => {
     >
       <div
         ref={subContainerRef}
-        className="preserve-3d z-0 h-[90vw] min-h-[360px] w-[90vw] min-w-[360px] shadow-2xl sm:h-auto sm:w-[48%] sm:min-w-min lg:min-h-[475px]"
+        className="preserve-3d z-0 h-[90vw] min-h-[350px] w-[90vw] min-w-[350px] shadow-2xl sm:h-auto sm:w-[48%] sm:min-w-min lg:min-h-[475px]"
       >
-        <div className="backface-invisible text-white absolute flex h-full w-full flex-col items-center justify-evenly border-4 border-solid border-secondary-300 bg-exclusive-500 px-2 py-6 sm:py-2 md:py-6">
+        <div className="backface-invisible absolute flex h-full w-full flex-col items-center justify-evenly border-4 border-solid border-secondary-300 bg-exclusive-500 px-2 py-6 sm:py-2 md:py-6">
           <h1
             ref={titleRef}
             className="text-center text-5xl font-bold sm:text-4xl md:text-5xl"
@@ -119,7 +119,7 @@ const CTA: FC = () => {
           <div className="curtain-stripe" />
         </div>
         {isFormVisible && (
-          <div className="backface-invisible rotate-y-180 bg-black text-white absolute flex h-full w-full flex-col items-center justify-evenly border-4 border-solid border-secondary-300 bg-tertiary-900 px-2 py-6 sm:py-2 md:py-6">
+          <div className="backface-invisible rotate-y-180 absolute flex h-full w-full flex-col items-center justify-evenly border-4 border-solid border-secondary-300 bg-tertiary-900 px-2 py-6 sm:py-2 md:py-6">
             <ContactFormWithCustomLoading />
             <div className="curtain-stripe" />
           </div>

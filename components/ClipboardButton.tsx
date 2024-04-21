@@ -34,7 +34,7 @@ const ClipboardButton: FC<ClipboardButtonProps> = ({ target }) => {
   return (
     <>
       <button
-        className="text-gray-500 absolute end-2 top-1 inline-flex items-center justify-center rounded p-2 hover:bg-primary-500 lg:top-1.5"
+        className="absolute end-2 top-1 inline-flex items-center justify-center rounded p-2 hover:bg-primary-500 lg:top-1.5"
         onClick={copyToClipboard}
       >
         {!copySuccess ? (

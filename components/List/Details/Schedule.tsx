@@ -77,9 +77,9 @@ const Schedule: FC = () => {
   return (
     <article
       ref={containerRef}
-      className="h-[90vw] min-h-[360px] w-[90vw] min-w-[360px] shadow-2xl sm:h-auto sm:min-h-min sm:w-[48%] sm:min-w-min"
+      className="h-[90vw] min-h-[350px] w-[90vw] min-w-[350px] shadow-2xl sm:h-auto sm:min-h-min sm:w-[48%] sm:min-w-min"
     >
-      <div className="text-white relative flex h-full w-full flex-col items-center justify-evenly overflow-hidden border-4 border-solid border-secondary-300 bg-neutral-500 p-2">
+      <div className="relative flex h-full w-full flex-col items-center justify-evenly overflow-hidden border-4 border-solid border-secondary-300 bg-neutral-500 p-2">
         <div
           ref={titleRef}
           className="flex w-full justify-center text-5xl font-bold text-secondary-500 sm:text-4xl"
@@ -97,7 +97,7 @@ const Schedule: FC = () => {
           ref={saturdayScheduleRef}
           className="grid w-3/4 gap-2 sm:w-11/12 md:w-3/4"
         >
-          <article className="flex items-center justify-between rounded-full bg-primary-200 p-1 shadow">
+          <article className="flex items-center justify-between rounded-full bg-primary-200 shadow xs:p-1">
             <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary-900 text-2xl">
               <FaCocktail />
             </span>
@@ -112,7 +112,7 @@ const Schedule: FC = () => {
             </div>
             <div className="mr-3 font-semibold">16:00</div>
           </article>
-          <article className="flex items-center justify-between rounded-full bg-primary-200 p-1 shadow">
+          <article className="flex items-center justify-between rounded-full bg-primary-200 shadow xs:p-1">
             <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary-900 text-2xl">
               <IoRestaurantOutline />
             </span>
@@ -127,7 +127,7 @@ const Schedule: FC = () => {
             </div>
             <div className="mr-3 font-semibold">19:00</div>
           </article>
-          <article className="flex items-center justify-between rounded-full bg-primary-200 p-1 shadow">
+          <article className="flex items-center justify-between rounded-full bg-primary-200 shadow xs:p-1">
             <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary-900 text-2xl">
               <IoMdMusicalNotes />
             </span>
@@ -153,7 +153,7 @@ const Schedule: FC = () => {
           ref={sundayScheduleRef}
           className="grid w-3/4 sm:w-11/12 md:w-3/4"
         >
-          <article className="flex items-center justify-between rounded-full bg-primary-200 p-1 shadow">
+          <article className="flex items-center justify-between rounded-full bg-primary-200 shadow xs:p-1">
             <span className="ml-1 flex h-10 w-10 items-center justify-center rounded-full bg-primary-900 text-2xl">
               <MdOutlineFreeBreakfast />
             </span>

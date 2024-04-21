@@ -31,8 +31,8 @@ const TableRow = async ({
   const booking = await getBooking(user.id);
   const [firstGuest, secondGuest] = await getGuests(user.id);
   return (
-    <tr className="border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600">
-      <th scope="row" className="whitespace-nowrap px-6 py-4 text-white">
+    <tr className="border-b hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600">
+      <th scope="row" className="whitespace-nowrap px-6 py-4">
         {firstGuest && (
           <>
             <div className="text-base font-semibold">
@@ -47,7 +47,7 @@ const TableRow = async ({
           </>
         )}
       </th>
-      <td className="whitespace-nowrap px-6 py-4 text-white">
+      <td className="whitespace-nowrap px-6 py-4">
         {secondGuest && (
           <>
             <div className="text-base font-semibold">
