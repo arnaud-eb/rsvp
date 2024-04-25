@@ -21,7 +21,7 @@ export default function Modal({ children }: { children: React.ReactNode }) {
       ref={dialogRef}
       onClick={closeModal}
       onClose={router.back}
-      className="overflow-hidden rounded-lg text-3xl backdrop:backdrop-blur sm:w-[80vw] md:w-[70vw] lg:w-[60vw] [&_section]:max-h-[70vh] [&_section]:overflow-auto [&_section]:overscroll-none [&_section]:xs:max-h-[80vh] [&_section]:landscape:max-h-[60vh]"
+      className="overflow-hidden rounded-lg text-3xl backdrop:backdrop-blur sm:w-[80vw] md:w-[70vw] lg:w-[60vw] [&_section]:max-h-[65vh] [&_section]:overflow-auto [&_section]:overscroll-none [&_section]:xs:max-h-[80vh] [&_section]:landscape:max-h-[50vh]"
       data-lenis-prevent
     >
       <div className="relative">
