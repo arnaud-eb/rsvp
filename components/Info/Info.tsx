@@ -201,13 +201,18 @@ const Info: FC = () => {
               </AccordionContent>
             </AccordionPanel>
             <AccordionPanel>
-              <AccordionTitle>Va-t-il pleuvoir?</AccordionTitle>
+              <AccordionTitle>Que puis-je vous offrir?</AccordionTitle>
               <AccordionContent>
                 <p className="mb-2 text-lg font-light text-secondary-400">
-                  Je ne sais pas mais si j&apos;étais toi, je prendrais mon
-                  parapluie 😉. Ce ne sont pas les tropiques, mais le domaine
-                  étant en bord de Meuse, je prévoirais également de
-                  l&apos;anti-moustique.
+                  On a zappé l&apos;urne et la liste de mariage, mais si tu veux
+                  nous faire sourire 😁, on a une petite suggestion par{" "}
+                  <Link
+                    href="/cadeau"
+                    className="underline transition-all hover:text-primary-900 hover:no-underline"
+                  >
+                    ici
+                  </Link>
+                  .
                 </p>
               </AccordionContent>
             </AccordionPanel>
@@ -224,18 +229,13 @@ const Info: FC = () => {
               </AccordionContent>
             </AccordionPanel>
             <AccordionPanel>
-              <AccordionTitle>Que puis-je vous offrir?</AccordionTitle>
+              <AccordionTitle>Va-t-il pleuvoir?</AccordionTitle>
               <AccordionContent>
                 <p className="mb-2 text-lg font-light text-secondary-400">
-                  On a zappé l&apos;urne et la liste de mariage, mais si tu veux
-                  nous faire sourire 😁, on a une petite suggestion par{" "}
-                  <Link
-                    href="/cadeau"
-                    className="underline transition-all hover:text-primary-900 hover:no-underline"
-                  >
-                    ici
-                  </Link>
-                  .
+                  Je ne sais pas mais si j&apos;étais toi, je prendrais mon
+                  parapluie 😉. Ce ne sont pas les tropiques, mais le domaine
+                  étant en bord de Meuse, je prévoirais également de
+                  l&apos;anti-moustique.
                 </p>
               </AccordionContent>
             </AccordionPanel>
