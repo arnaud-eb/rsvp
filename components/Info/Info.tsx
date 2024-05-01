@@ -221,10 +221,17 @@ const Info: FC = () => {
               <AccordionContent>
                 <p className="mb-2 text-lg font-light text-secondary-400">
                   Non, mais tu fais bien de poser la question! On compte sur toi
-                  pour prendre un max de photos à la sauvette 📸! Un peu avant
-                  le mariage, on partagera un lien ici pour charger les photos
-                  sur une plateforme en ligne afin que tout le monde puisse en
-                  profiter. Merci 😁!
+                  pour prendre un max de photos 📸 à la sauvette et les partager
+                  avec tout le monde{" "}
+                  <a
+                    href="https://photos.app.goo.gl/dmc3ZQ393cNNhrx67"
+                    className="underline transition-all hover:text-primary-900 hover:no-underline"
+                    target="_blank"
+                  >
+                    ici
+                  </a>
+                  ! N&apos;hésite pas à consulter les autres photos et laisser
+                  un commentaire! Merci 😁!
                 </p>
               </AccordionContent>
             </AccordionPanel>
