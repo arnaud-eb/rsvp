@@ -1,34 +1,95 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RSVP Management Application
 
-## Getting Started
+A modern, full-stack event management application built with Next.js 13, featuring guest RSVP system, accommodation preferences, activity selections, and an administrative dashboard.
 
-First, run the development server:
+🌐 **Live Demo:** [https://rsvp-yufk.vercel.app/](https://rsvp-yufk.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## 🚀 Features
+
+- **Multi-step RSVP Form**: Interactive stepper component for seamless user experience
+- **Guest Management**: Handle multiple guests per booking with dietary restrictions
+- **Preference Selection**: Allow guests to select accommodation and activity preferences
+- **Admin Dashboard**: Real-time view of all bookings and messages
+- **Responsive Design**: Mobile-first approach with smooth animations
+- **Contact System**: Integrated messaging system for guest inquiries
+
+## 🛠 Tech Stack
+
+- **Frontend**: Next.js 13 (App Router), TypeScript, Tailwind CSS
+- **Backend**: Next.js API Routes, Server Actions
+- **Database**: PostgreSQL with Prisma ORM
+- **Validation**: Zod with React Hook Form
+- **Deployment**: Vercel
+- **Animation**: GSAP, Lenis smooth scrolling
+
+## 🏗 Architecture
+
+### Next.js 13 App Router
+- **Parallel Routes**: Modal overlays with `@modal` directory
+- **Route Groups**: Organized dashboard routes with `(dashboard)`
+- **Intercepting Routes**: Seamless modal navigation
+- **Server Actions**: Type-safe form submissions
+
+## 📁 Project Structure
+
+```
+app/
+├── @modal/              # Parallel routes for modals
+├── (dashboard)/         # Main RSVP pages
+├── admin/              # Admin dashboard
+└── api/                # API routes
+
+components/
+├── RSVP/               # Multi-step form components
+├── Info/               # Event information
+└── Modal.tsx           # Modal wrapper
+
+lib/
+├── db.ts               # Prisma client
+└── schema.ts           # Zod validation schemas
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js 18+
+- PostgreSQL database
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Installation
 
-## Learn More
+```bash
+# Clone the repository
+git clone git@github.com:arnaud-eb/rsvp.git
+cd rsvp
 
-To learn more about Next.js, take a look at the following resources:
+# Install dependencies
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start development server
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Available Scripts
 
-## Deploy on Vercel
+```bash
+npm run dev      # Start development server with video sync
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📊 Key Achievements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Performance**: Optimized with Next.js 13 App Router and Server Components
+- **User Experience**: Smooth animations and intuitive multi-step forms
+- **Type Safety**: Full TypeScript coverage with Zod validation
+- **Responsive Design**: Works seamlessly across all devices
+- **Modern Stack**: Latest Next.js features with Server Actions
+
+## 🎯 Development Highlights
+
+- Implemented modern Next.js 13 patterns (App Router, Server Actions)
+- Built reusable, accessible components with TypeScript
+- Created smooth user interactions with GSAP and Lenis
+- Integrated video content with next-video plugin
+- Deployed scalable solution on Vercel with automatic deployments
